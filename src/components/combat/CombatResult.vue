@@ -52,7 +52,7 @@ const emit = defineEmits(["reset"]);
   gap: 40px;
   justify-content: center;
 }
-::v-deep .container {
+:deep(.container) {
   width: 240px !important;
   height: 320px !important;
   padding: 20px 0 !important;
