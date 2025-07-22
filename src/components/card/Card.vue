@@ -73,6 +73,7 @@ body.dark .container {
 }
 
 h2 {
+  text-align: center;
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;

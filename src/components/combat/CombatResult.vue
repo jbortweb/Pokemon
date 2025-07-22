@@ -53,7 +53,7 @@ const emit = defineEmits(["reset"]);
   justify-content: center;
 }
 :deep(.container) {
-  width: 240px !important;
+  width: 260px !important;
   height: 320px !important;
   padding: 20px 0 !important;
 }
