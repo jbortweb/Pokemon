@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, defineEmits } from "vue";
+import { defineProps } from "vue";
 
 const props = defineProps({
   selected: Array,
@@ -21,7 +21,13 @@ const emit = defineEmits(["reset"]);
         </div>
       </div>
       <div class="winner-info">
-        <span v-if="props.winner">Ganador: {{ props.winner.name }}</span>
+        <span v-if="props.winner && !props.winner.empate"
+          >Ganador: {{ props.winner.name }}</span
+        >
+        <span v-else-if="props.winner && props.winner.empate"
+          >¡Empate entre {{ props.winner.cartas[0].name }} y
+          {{ props.winner.cartas[1].name }}!</span
+        >
         <span v-else>¡Empate!</span>
         <button class="boton-reset" @click="emit('reset')">Reiniciar</button>
       </div>
