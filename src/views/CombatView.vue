@@ -3,7 +3,6 @@ import { ref, computed } from "vue";
 import { getPokemons } from "@/services/pokemon";
 import CombatCards from "@/components/combat/CombatCards.vue";
 import CombatResult from "@/components/combat/CombatResult.vue";
-import { rand } from "@vueuse/core";
 
 const pokemons = ref([]);
 const selected = ref([]);

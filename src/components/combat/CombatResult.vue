@@ -1,5 +1,6 @@
 <script setup>
 import { defineProps } from "vue";
+import Card from "@/components/card/Card.vue";
 
 const props = defineProps({
   selected: Array,
@@ -12,14 +13,12 @@ const emit = defineEmits(["reset"]);
 <template>
   <div class="container-combat">
     <div v-if="props.selected.length === 2" class="cards-selected">
-      <div class="container-card" v-for="card in props.selected" :key="card.id">
-        <img :src="card.image" :alt="card.name" class="poke-img" />
-        <div class="poke-info">
-          <h3>{{ card.name }}</h3>
-          <p>Ataque: {{ card.attack }}</p>
-          <p>Defensa: {{ card.defense }}</p>
-        </div>
-      </div>
+      <Card
+        v-for="card in props.selected"
+        :key="card.id"
+        :card="card"
+        :showButton="false"
+      />
       <div class="winner-info">
         <span v-if="props.winner && !props.winner.empate"
           >Ganador: {{ props.winner.name }}</span
@@ -53,17 +52,10 @@ const emit = defineEmits(["reset"]);
   gap: 40px;
   justify-content: center;
 }
-.container-card {
-  width: 180px;
-  height: 240px;
-  background: var(--bg-main);
-  border: 2px solid var(--border-main);
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+::v-deep .container {
+  width: 240px !important;
+  height: 320px !important;
+  padding: 20px 0 !important;
 }
 body.dark .container-card {
   background: var(--bg-dark);
@@ -92,7 +84,6 @@ body.dark .container-card h3 {
 .boton-reset {
   padding: 6px 16px;
   border-radius: 6px;
-  border: none;
   background: orangered;
   color: #fff;
   cursor: pointer;
