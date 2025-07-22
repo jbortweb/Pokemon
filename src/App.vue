@@ -13,8 +13,10 @@ const toggleDark = useToggle(isDark);
   <div>
     <header>
       <nav>
-        <RouterLink :class="{ moving: isDark }" to="/">Inici</RouterLink>
-        <RouterLink :class="{ moving: isDark }" to="/combat">Combat</RouterLink>
+        <RouterLink :class="{ moving: isDark }" to="/">Inicio</RouterLink>
+        <RouterLink :class="{ moving: isDark }" to="/combat"
+          >Combate</RouterLink
+        >
       </nav>
       <div class="dark-toggle">
         <button

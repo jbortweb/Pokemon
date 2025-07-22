@@ -30,7 +30,7 @@ const props = defineProps({
         class="boton-card"
         @click="$router.push({ name: 'pokemon', params: { id: card.id } })"
       >
-        Ver más...
+        Ver más
       </button>
     </div>
   </div>

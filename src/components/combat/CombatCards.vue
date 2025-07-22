@@ -25,7 +25,7 @@ function handleClick(card) {
       :class="{ selected: props.selected.includes(card) }"
       @click="handleClick(card)"
     >
-      <span class="diagonal-text">pokemon</span>
+      <span class="diagonal-text">pokémon</span>
     </div>
   </div>
 </template>

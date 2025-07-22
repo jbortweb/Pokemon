@@ -21,7 +21,7 @@ const filteredCards = computed(() => {
 
 <template>
   <div>
-    <h1>Lista pokemon</h1>
+    <h1>Lista pokémon</h1>
     <input
       v-model="filter"
       type="text"
@@ -36,9 +36,7 @@ const filteredCards = computed(() => {
         :showButton="true"
       />
     </div>
-    <div v-else class="no-results">
-      No hay pokemons con esas letras, sigue buscando.
-    </div>
+    <div v-else class="no-results">No hay resultado, reinicia la búsqueda.</div>
   </div>
 </template>
 
