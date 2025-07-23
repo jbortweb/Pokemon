@@ -97,17 +97,22 @@ body.dark h2 {
 .types-list {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 12px;
   margin-bottom: 8px;
 }
 .type-badge {
-  background: #eee;
-  color: #333;
+  background: #ccc;
+  color: #222;
   border-radius: 8px;
   padding: 2px 10px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: capitalize;
+  padding: 4px 12px;
+}
+body.dark .type-badge {
+  background: #222;
+  color: #ccc;
   border: 1px solid #ccc;
 }
 </style>

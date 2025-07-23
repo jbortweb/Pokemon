@@ -42,7 +42,7 @@ const winner = computed(() => {
   const bScore = b.attack + b.defense;
   if (aScore > bScore) return a;
   if (bScore > aScore) return b;
-  // Si hay empate, devolvemos un objeto especial
+  // Si hay empate, devolvemos un objeto
   if (aScore === bScore) {
     return { empate: true, cartas: [a, b] };
   }
