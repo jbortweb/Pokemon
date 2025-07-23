@@ -18,8 +18,8 @@ export async function getPokemons() {
       const image = data.sprites.front_default;
       const attack = data.stats.find(stat => stat.stat.name === 'attack').base_stat;
       const defense = data.stats.find(stat => stat.stat.name === 'defense').base_stat;
-
-      return { id, name, image, attack, defense };
+      const types = data.types.map(type => type.type.name);
+      return { id, name, image, attack, defense, types };
     })
   );
   return pokemons;
@@ -32,12 +32,14 @@ export const getPokemonById = async (id) => {
   const response = await axios.get(url);
   const data = response.data;
 
+  const types = data.types.map(type => type.type.name);
   const pokemon = {
     id: data.id,
     name: data.name,
     image: data.sprites.front_default,
     attack: data.stats.find(stat => stat.stat.name === 'attack').base_stat,
     defense: data.stats.find(stat => stat.stat.name === 'defense').base_stat,
+    types,
   };
 
   return pokemon;

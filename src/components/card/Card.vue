@@ -8,6 +8,10 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+  showTypes: {
+    type: Boolean,
+    default: false,
+  },
 });
 </script>
 
@@ -23,6 +27,14 @@ const props = defineProps({
     </div>
     <div class="p-5">
       <h2 class="">{{ card.name }}</h2>
+      <div
+        v-if="showTypes && card.types && card.types.length"
+        class="types-list"
+      >
+        <div v-for="type in card.types" :key="type" class="type-badge">
+          <span>{{ type }}</span>
+        </div>
+      </div>
       <p>Ataque: {{ card.attack }} - Defensa: {{ card.defense }}</p>
       <button
         v-if="showButton"
@@ -82,4 +94,21 @@ h2 {
 body.dark h2 {
   color: var(--text-dark);
 }
+.types-list {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.type-badge {
+  background: #eee;
+  color: #333;
+  border-radius: 8px;
+  padding: 2px 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  border: 1px solid #ccc;
+}
 </style>
+  

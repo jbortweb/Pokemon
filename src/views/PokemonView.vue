@@ -26,7 +26,7 @@ const goBack = () => {
     <div v-if="pokemon">
       <h1>{{ pokemon.name }}</h1>
       <div class="container-cards">
-        <Card :card="pokemon" :showButton="false" />
+        <Card :card="pokemon" :showButton="false" :showTypes="true" />
       </div>
     </div>
     <div v-else>Cargando...</div>

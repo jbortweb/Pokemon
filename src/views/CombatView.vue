@@ -34,7 +34,7 @@ function resetSelection() {
     selected.value = [];
   });
 }
-// Comparamos valor de las cartas y seleccionamos el ganador
+// Comparamos valor de las cartas y seleccionamos el ganador, el ganador se hace sumando la defensa y ataque de ambos y el que suma más puntos, gana
 const winner = computed(() => {
   if (selected.value.length < 2) return null;
   const [a, b] = selected.value;
